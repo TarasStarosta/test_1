@@ -54,5 +54,5 @@ class ArticleList(ListView):
 
 class ArticleCategoryList(ArticleList):
     def get_queryset(self, *args, **kwargs): 
-        articles = Article.objects.filter(category slug in=[self.kwargs['slug']]).distinct()
+        articles = Article.objects.filter(Category, slugin=[self.kwargs['slug']]).distinct()
         return articles
